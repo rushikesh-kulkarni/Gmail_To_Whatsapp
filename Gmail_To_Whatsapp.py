@@ -4,16 +4,16 @@ import os
 from twilio.rest import Client
 
 # Your Account SID from twilio.com/console
-account_sid = "your sid"
+account_sid = "ACc7a27cd4b692873ee03635c06e440656"
 # Your Auth Token from twilio.com/console
-auth_token  = "your auth token"
+auth_token  = "725cab644969352a2255eaf5da893d33"
 client = Client(account_sid, auth_token)
 def send_whatsapp(email_from,email_subject):
 #    client = Client()
 
     message = client.messages.create(
-        to="whatsapp:+91xxxxxxxxxx",#your phone number 
-        from_="whatsapp:+1xxxxxxxxx",# twilio number
+        to="whatsapp:+917045210378", 
+        from_="whatsapp:+14155238886",
         body=email_from+email_subject)
 
     print(message.sid)
@@ -23,9 +23,9 @@ while True:
     count = ''
     try:
         mail = imaplib.IMAP4_SSL('imap.gmail.com')	
-        mail.login('email_address', 'password')
+        mail.login('demon9380163@gmail.com', 'rushikul01')
         mail.select("inbox",True) # connect to inbox.
-        return_code, data = mail.search(None, 'UnSeen') #selects only unseen
+        return_code, data = mail.search(None, 'UnSeen')
         mail_ids = data[0].decode()
         count = len(mail_ids[0].split(" "))
         id_list = mail_ids.split()
